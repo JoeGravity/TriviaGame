@@ -7,47 +7,73 @@
     <title>Totally Trivial Triviaaah!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/trivia.css" />
+    <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
+    <style>
+        body {
+            text-align: center;
+            margin: auto;
+            background: linear-gradient(to right, rgb(237, 130, 0), rgb(40, 16, 0) ,rgb(26, 0, 0), rgb(237, 130, 0)); 
+            background-size: cover;
 
+            color: rgb(255, 246, 165);
+        }
+        h1 {font-size: 24mm;
+            font-family: 'Rammetto One', cursive;
+            }
+
+        h2 {font-size: 16mm;
+            font-family: 'Rammetto One', cursive;
+            }
+
+                h3 {font-size: 10mm;
+                color: rgb(237, 130, 0);
+                font-family: 'Rammetto One', cursive;
+                }
+
+
+
+    </style>
 </head>
 
-<body style="text-align: center;">
-    <h1>Totally Trivial Triviaaah!!!!</h1>
+<body>
+    <h1>My kids love BUNNIES!</h1>
     <button id="start">CLICK TO START</button>
     <div id="quizBox">
-        <h2>Time remaining: <span id="timeLeft"></span>
+        <h2>Time remaining:
+            <span id="timeLeft"></span>
         </h2>
-<form>
-        <div class = "question">
-        <h3>What is the answer to the first question?</h3>
-            <input type="radio" name="q1" value="a"> One
-            <input type="radio" name="q1" value="b"> Two
-            <input type="radio" name="q1" value="c"> Three
-            <input type="radio" name="q1" value="d"> Four
+        <form>
+            <div class="question">
+                <h3>Does Milo love Bunnies?</h3>
+                <input type="radio" name="q1" value="a"> Yes
+                <input type="radio" name="q1" value="b"> No
+                <input type="radio" name="q1" value="c"> Maybe
+                <input type="radio" name="q1" value="d"> I don't know
             </div>
-            <div class = "question">
-        <h3>What is the answer to the second question?</h3>
-            <input type="radio" name="q2" value="a"> One
-            <input type="radio" name="q2" value="b"> Two
-            <input type="radio" name="q2" value="c"> Three
-            <input type="radio" name="q2" value="d"> Four
+            <div class="question">
+                <h3>Does Bailey love Bunnies?</h3>
+                <input type="radio" name="q2" value="a"> Yes
+                <input type="radio" name="q2" value="b"> No
+                <input type="radio" name="q2" value="c"> Maybe
+                <input type="radio" name="q2" value="d"> I don't know
             </div>
-            <div class = "question">
-        <h3>What is the answer to the third question?</h3>
-            <input type="radio" name="q3" value="a"> One
-            <input type="radio" name="q3" value="b"> Two
-            <input type="radio" name="q3" value="c"> Three
-            <input type="radio" name="q3" value="d"> Four
+            <div class="question">
+                <h3>Does Mommy love Bunnies?</h3>
+                <input type="radio" name="q3" value="a"> Yes
+                <input type="radio" name="q3" value="b"> No
+                <input type="radio" name="q3" value="c"> Maybe
+                <input type="radio" name="q3" value="d"> I don't know
             </div>
-            <div class = "question">
-        <h3>What is the answer to the fourth question?</h3>
-            <input type="radio" name="q4" value="a"> One
-            <input type="radio" name="q4" value="b"> Two
-            <input type="radio" name="q4" value="c"> Three
-            <input type="radio" name="q4" value="d"> Four
+            <div class="question">
+                <h3>Is Milo allergic to Bunnies?</h3>
+                <input type="radio" name="q4" value="a"> Yes
+                <input type="radio" name="q4" value="b"> No
+                <input type="radio" name="q4" value="c"> Maybe
+                <input type="radio" name="q4" value="d"> I don't know
             </div>
             <br>
-            <input type="submit" id="doneBtn" />
-        <!-- <button id='done' onclick="return tally();" type="submit">Done</button> -->
+            <input type="submit" />
+            <!-- <button id='done' onclick="return tally();" type="submit">Done</button> -->
         </form>
     </div>
     <div id="scorebox">

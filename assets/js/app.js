@@ -9,7 +9,7 @@ $("#scorebox").hide();
 //--------------------------------------------------------------------
 
 //  Set our number counter to 100.
-var number = 5;
+var number = 11;
 //  Variable that will hold our interval ID when we execute the "run" function
 var intervalId;
 
@@ -96,8 +96,8 @@ function tally() {
 var answers = {
     "q1": "a",
     "q2": "a",
-    "q3": "a",
-    "q4": "a"
+    "q3": "c",
+    "q4": "d"
 }
 
 
@@ -109,7 +109,16 @@ function scoring() {
     $('#wahr').text(correct);
     $('#falsch').text(incorrect);
     $('#missed').text(missing);
+    $('#scorebox').append('<input type="button">Try again</button>');
+    // infinite loop bug fix
+    this.preventDefault();
 };
+
+//  When the Try Again button gets clicked, .
+$("#scorebox").on("click", function () {
+    // reload the page
+    location.reload();
+});
 
 //  When the Start button gets clicked, execute the run function.
 $("#start").on("click", run);
