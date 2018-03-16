@@ -60,33 +60,41 @@ function stop() {
 var correct = 0;
 var incorrect = 0;
 var missing = 0;
+var mssg = "Your Score:"
+
+
 
 $("form").on("submit", function (e) {
+    // infinite loop bug fix
     e.preventDefault();
+    // stop timer (if still running)
+    stop();
+    tally();
+});
 
+function tally() {
+    // add up scores
     $questions = $(".question");
     $questions.each(function () {
         var answer = $(this).find("input:checked"),
             key = answer.attr("name"),
             val = answer.attr("value");
-        console.log(key, val, answer.length);
+        console.log(key, val, answers[key], answer.length);
 
         if (answer.length === 0) {
             // add to total
             missing++;
-            // write total to #missed
         } else if (answers[key] !== val) {
             // add to total
             incorrect++;
-            // write total to #falsch
         } else {
             // add to total
             correct++;
-            // write total to #wahr
+            // show scores (ƒ)
         }
-    });
-
-});
+        scoring();
+    })
+};
 
 var answers = {
     "q1": "a",
@@ -96,26 +104,17 @@ var answers = {
 }
 
 
-// add up & show scores(ƒ)
-function tally() {
+// show scores(ƒ)
+function scoring() {
     $("#scorebox").show();
     $("#annc").text(mssg);
-    $('#wahr').append(correct);
-    $('#falsch').append(incorrect);
-    $('#missed').append(missing);
+    $('#wahr').text(correct);
+    $('#falsch').text(incorrect);
+    $('#missed').text(missing);
 };
 
 //  When the Start button gets clicked, execute the run function.
 $("#start").on("click", run);
 
-// if quiz "done" button clicked before time up,
-$('#done').click(function () {
-    // stop timer
-    stop();
-    // show "You finished early!"
-    mssg = "You finished early!";
-    tally();
-    // add up & show scores(ƒ)
-});
 
     // });
