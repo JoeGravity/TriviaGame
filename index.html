@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Totally Trivial Triviaaah!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/trivia.css" />
+
+</head>
+
+<body>
+    <h1>Totally Trivial Triviaaah!!!!</h1>
+    <button id="start">CLICK TO START</button>
+    <div id="quizBox">
+        <h2 id="timeLeft">
+            <!-- Time remaining:  -->
+        </h2>
+        <h3>What is the answer to the first question?</h3>
+        <form id="quiz" method="post" onsubmit="return false">
+            <input type="radio" name="q1" value="right"> One
+            <input type="radio" name="q1" value="wrong"> Two
+            <input type="radio" name="q1" value="wrong"> Three
+            <input type="radio" name="q1" value="wrong"> Four
+        <h3>What is the answer to the second question?</h3>
+            <input type="radio" name="q2" value="wrong"> One
+            <input type="radio" name="q2" value="right"> Two
+            <input type="radio" name="q2" value="wrong"> Three
+            <input type="radio" name="q2" value="wrong"> Four
+        <h3>What is the answer to the third question?</h3>
+            <input type="radio" name="q3" value="wrong"> One
+            <input type="radio" name="q3" value="wrong"> Two
+            <input type="radio" name="q3" value="right"> Three
+            <input type="radio" name="q3" value="wrong"> Four
+        <h3>What is the answer to the fourth question?</h3>
+            <input type="radio" name="q4" value="wrong"> One
+            <input type="radio" name="q4" value="wrong"> Two
+            <input type="radio" name="q4" value="wrong"> Three
+            <input type="radio" name="q4" value="right"> Four
+            <br>
+            <button id='done' type="submit">Done</button>
+        <!-- <button id='done' onclick="return tally();" type="submit">Done</button> -->
+        </form>
+    </div>
+    <div id="scorebox">
+        <h2 id="annc"></h2>
+        <h3>
+            Correct answers:
+            <span id="wahr"></span>
+            <br> Incorrect answers:
+            <span id="falsch"></span>
+            <br> Unanswered questions:
+            <span id="missed"></span>
+        </h3>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
