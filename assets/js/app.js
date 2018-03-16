@@ -6,7 +6,6 @@ $("#scorebox").hide();
 
 // var answers = ["q1a", "q2b", "q3c", "q4d"];
 
-
 //--------------------------------------------------------------------
 
 //  Set our number counter to 100.
@@ -33,7 +32,7 @@ function decrement() {
     //  Decrease number by one.
     number--;
     //  Show the number in the #show-number tag.
-    $("#timeLeft").html("<h2>" + number + "</h2>");
+    $("#timeLeft").html(number);
 
     //  Once number hits zero...
     if (number === 0) {
@@ -61,8 +60,6 @@ var correct = 0;
 var incorrect = 0;
 var missing = 0;
 var mssg = "Your Score:"
-
-
 
 $("form").on("submit", function (e) {
     // infinite loop bug fix
@@ -106,6 +103,7 @@ var answers = {
 
 // show scores(ƒ)
 function scoring() {
+    $('#doneBtn').hide();
     $("#scorebox").show();
     $("#annc").text(mssg);
     $('#wahr').text(correct);
@@ -115,6 +113,5 @@ function scoring() {
 
 //  When the Start button gets clicked, execute the run function.
 $("#start").on("click", run);
-
 
     // });
