@@ -4,17 +4,12 @@
 $("#quizBox").hide();
 $("#scorebox").hide();
 
-// var answers = ["q1a", "q2b", "q3c", "q4d"];
-
-//--------------------------------------------------------------------
-
-//  Set our number counter to 100.
+//  Set our number counter to 10 sec.
 var number = 11;
 //  Variable that will hold our interval ID when we execute the "run" function
 var intervalId;
 
-//  The run function sets an interval
-//  that runs the decrement function once a second.
+//  The run function sets an interval that runs the decrement function once a second.
 //  *****BUG FIX******** 
 //  Clearing the intervalId prior to setting our new intervalId will not allow multiple instances.
 function run() {
@@ -89,17 +84,17 @@ function tally() {
             correct++;
             // show scores (ƒ)
         }
-        scoring();
-    })
+    }); scoring();
+
 };
 
+// answer key
 var answers = {
     "q1": "a",
     "q2": "a",
     "q3": "c",
     "q4": "d"
 }
-
 
 // show scores(ƒ)
 function scoring() {
@@ -109,12 +104,10 @@ function scoring() {
     $('#wahr').text(correct);
     $('#falsch').text(incorrect);
     $('#missed').text(missing);
-    $('#scorebox').append('<input type="button">Try again</button>');
-    // infinite loop bug fix
-    this.preventDefault();
+    $('#scorebox').append('<input type="button">&#160; Try again</button>');
 };
 
-//  When the Try Again button gets clicked, .
+//  When the Try Again button gets clicked, 
 $("#scorebox").on("click", function () {
     // reload the page
     location.reload();
